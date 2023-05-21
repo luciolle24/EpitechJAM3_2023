@@ -1,10 +1,10 @@
 // theme.js
 
-const theme = {
+const DarkTheme = {
     colors: {
         primary: "#000000",
-        secondary: "#00000011",
+        secondary: "#FFFFFF",
     },
 };
 
-export default theme;
+export default DarkTheme;

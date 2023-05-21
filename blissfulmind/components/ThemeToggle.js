@@ -1,24 +1,26 @@
-// ThemeToggle.js
-
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const ToggleButton = styled.button`
-    /* Button styles */
+    background-color: ${(props) => props.theme.colors.secondary};
+    color: ${(props) => props.theme.colors.primary};
+    border: 1px solid ${(props) => props.theme.colors.secondary};
+    border-radius: 50%;
+    padding: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    &:hover {
+        background-color: ${(props) => props.theme.colors.secondary};
+        color: ${(props) => props.theme.colors.primary};
+    }
 `;
 
-const ThemeToggle = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
+const ThemeToggle = ({ toggleTheme }) => {
     const handleToggle = () => {
-        setIsDarkMode(!isDarkMode);
+        toggleTheme();
     };
 
-    return (
-        <ToggleButton onClick={handleToggle}>
-            {isDarkMode ? "Light Mode" : "Dark Mode"}
-        </ToggleButton>
-    );
+    return <ToggleButton onClick={handleToggle}>Breathe</ToggleButton>;
 };
 
 export default ThemeToggle;

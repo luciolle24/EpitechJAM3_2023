@@ -1,10 +1,10 @@
 // theme.js
 
-const theme = {
+const LightTheme = {
     colors: {
-        primary: "#000000",
-        secondary: "#00000011",
+        primary: "#FFFFFF",
+        secondary: "#000000",
     },
 };
 
-export default theme;
+export default LightTheme;

@@ -8,20 +8,30 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: ${(props) => props.theme.colors.secondary};
+    flex-direction: column;
+`;
+
+const Title = styled.h1`
+    color: ${(props) => props.theme.colors.primary};
 `;
 const Breathball = styled.div`
+    padding: 200px;
     width: 300px;
     height: 300px;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: ${(props) => props.theme.colors.primary};
     box-shadow: 0 0 0 0 ${(props) => props.theme.colors.secondary};
-    animation: pulse 2s infinite;
+    animation: pulse 1.5s infinite;
     @keyframes pulse {
         0% {
             transform: scale(0.95);
             box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
         }
-        70% {
+        80% {
             transform: scale(1);
             box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
         }
@@ -32,11 +42,15 @@ const Breathball = styled.div`
     }
 `;
 
-export default function Home() {
+const HomePage = ({ toggleTheme }) => {
     return (
         <Container>
-            <Breathball />
-            <ThemeToggle />
+            <Title>BlissfulMind</Title>
+            <Breathball>
+                <ThemeToggle toggleTheme={toggleTheme} />
+            </Breathball>
         </Container>
     );
-}
+};
+
+export default HomePage;

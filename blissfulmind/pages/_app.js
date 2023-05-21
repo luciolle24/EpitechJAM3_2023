@@ -1,12 +1,20 @@
 // _app.js
 
-import theme from "@/styles/darkTheme";
 import { ThemeProvider } from "styled-components";
+import { useState } from "react";
+import LightTheme from "@/styles/lightTheme";
+import DarkTheme from "@/styles/darkTheme";
 
 function MyApp({ Component, pageProps }) {
+    const [currentTheme, setCurrentTheme] = useState(LightTheme);
+
+    const toggleTheme = () => {
+        setCurrentTheme(currentTheme === LightTheme ? DarkTheme : LightTheme);
+    };
+
     return (
-        <ThemeProvider theme={theme}>
-            <Component {...pageProps} />
+        <ThemeProvider theme={currentTheme}>
+            <Component {...pageProps} toggleTheme={toggleTheme} />
         </ThemeProvider>
     );
 }
