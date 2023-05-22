@@ -1,3 +1,4 @@
+import Quote from "@/components/Quote";
 import ThemeToggle from "@/components/ThemeToggle";
 import styled from "styled-components";
 
@@ -13,6 +14,10 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
+    color: ${(props) => props.theme.colors.primary};
+`;
+
+const A = styled.a`
     color: ${(props) => props.theme.colors.primary};
 `;
 const Breathball = styled.div`
@@ -49,6 +54,11 @@ const HomePage = ({ toggleTheme }) => {
             <Breathball>
                 <ThemeToggle toggleTheme={toggleTheme} />
             </Breathball>
+            <Quote />
+            <Title>Inspirational quotes provided by </Title>
+            <A href="https://zenquotes.io/" target="_blank">
+                ZenQuotes API
+            </A>
         </Container>
     );
 };
